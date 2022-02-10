@@ -56,16 +56,12 @@ app/**/*.js.map
 node_modules/
 bower_components/
 
-# IDEs and editors
-.idea/
+
 
 # misc
-.sass-cache/
 connect.lock/
 coverage/
 libpeerconnection.log/
-npm-debug.log
-testem.log
 typings/
 .angular/
 
@@ -75,5 +71,5 @@ e2e/*.map
 
 # System Files
 .DS_Store/
-
+.vscode
 # End of https://www.toptal.com/developers/gitignore/api/angular

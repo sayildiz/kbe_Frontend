@@ -6,6 +6,6 @@ export interface ProductDetail{
   location: string;
   amount: number;
   deliveryTime: number;
-  usdPrice?: number;
+  priceUSD?: number;
   description: string;
 }

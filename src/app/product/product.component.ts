@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "./product";
 import {Router} from "@angular/router";
+import {ProductService} from "../product.service";
 
 @Component({
   selector: 'app-product',
@@ -8,23 +9,25 @@ import {Router} from "@angular/router";
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  productList: Product[] = [{
-    uuid: "something",
-    name: "Iphone",
-    price: 399.99,
-    usdPrice: 500,
-    description: "LOREMIPSDOAISJHFDNLKASDFNBÜAOSDIFHNAÜOIF"
-  }]
+  products: Product[]= [];
 
 
-  constructor( private route: Router) { }
+  constructor( private route: Router,
+               private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
   onSelectProduct(selectedProduct: Product){
     const url = 'products/' + selectedProduct.uuid;
     console.log("CLICK");
     this.route.navigate([url])
+  }
+
+  getProducts(): void{
+    this.productService.getProducts()
+      .subscribe(products => this.products = products);
   }
 }

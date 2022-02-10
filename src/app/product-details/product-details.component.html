@@ -1,23 +1,26 @@
+<div *ngIf="selectedProduct">
   <mat-card>
     <mat-card-header>
       <div class="productName">
-        <p>{{productDetail.name}}</p>
+        <p>{{selectedProduct.name}}</p>
       </div>
 
       <div class="price">
-        <p>{{productDetail.price}}€</p>
+        <p>{{selectedProduct.price}}€</p>
       </div>
 
     </mat-card-header>
 
     <mat-card-content>
       <div class="productInfos">
-        <p class="usdPrice"> USD Price: {{productDetail.usdPrice}}$</p>
-        <p>Description: {{productDetail.description}}</p>
-        <p>Location: {{productDetail.location}}</p>
-        <p>Amount: {{productDetail.amount}}</p>
-        <p>Delivery Time: {{productDetail.deliveryTime}}</p>
+<!--    <p class="usdPrice"> USD Price: {{selectedProduct.priceUSD}}$</p> -->
+        <p>Description: {{selectedProduct.description}}</p>
+        <p>Location: {{selectedProduct.location}}</p>
+        <p>Amount: {{selectedProduct.amount}}</p>
+        <p>Delivery Time: {{selectedProduct.deliveryTime}}</p>
       </div>
     </mat-card-content>
   </mat-card>
+</div>
+
 
