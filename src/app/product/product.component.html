@@ -1,0 +1,25 @@
+
+<div *ngFor="let product of products" class="products" >
+
+      <mat-card (click)="onSelectProduct(product)" >
+        <mat-card-header>
+          <div class="productName">
+            <p>{{product.name}}</p>
+          </div>
+
+          <div class="price">
+            <p>{{product.price}}€</p>
+          </div>
+
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="productInfos">
+            <p class="usdPrice">PriceUSD: {{product.priceUSD}}$</p>
+            <p>Description: {{product.description}}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+</div>
+
