@@ -22,7 +22,6 @@ export class ProductComponent implements OnInit {
 
   onSelectProduct(selectedProduct: Product){
     const url = 'products/' + selectedProduct.uuid;
-    console.log("CLICK");
     this.route.navigate([url])
   }
 
