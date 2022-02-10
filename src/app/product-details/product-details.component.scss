@@ -1,0 +1,35 @@
+mat-header {
+  display: flex;
+}
+
+mat-card{
+  height: 100vw;
+}
+
+.productName{
+  font-weight: bold;
+  font-size: 30px;
+  top:0;
+}
+
+.price {
+  position: absolute;
+  right: 1%;
+  top: 0;
+  p {
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+.productInfos{
+  .usdPrice{
+    font-weight: bold;
+  }
+  width: 50vw;
+}
+
+ul
+{
+  list-style-type: none;
+}
