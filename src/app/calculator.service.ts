@@ -1,35 +1,23 @@
 import { Injectable } from '@angular/core';
-import {Observable, throwError} from "rxjs";
-import {Product} from "./product/product";
-import { catchError } from 'rxjs/operators';
-import {ProductDetail} from "./product-details/productDetail";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {Observable, throwError} from "rxjs";
+import {catchError} from "rxjs/operators";
+import {Price} from "./vat-calculator/price";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class CalculatorService {
   private gateWayUrl = 'http://localhost:56669'
-  private product_api = 'product';
-
-
+  private calc_api = 'vat';
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  /** GET heroes from the server */
-  getProducts(): Observable<Product[]> {
-    const requestUrl = `${this.gateWayUrl}/${this.product_api}`;
-    return this.http.get<Product[]>(requestUrl)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  getProduct(uuid: string): Observable<ProductDetail> {
-    const url = `${this.gateWayUrl}/${this.product_api}/${uuid}`;
-    return this.http.get<ProductDetail>(url).pipe(
+  getVAT(price: number): Observable<Price> {
+    const url = `${this.gateWayUrl}/${this.calc_api}`;
+    return this.http.post<Price>(url, price).pipe(
       catchError(this.handleError)
     );
   }
