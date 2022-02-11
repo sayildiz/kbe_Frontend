@@ -22,7 +22,6 @@ export class VatCalculatorComponent implements OnInit {
   }
 
   getVAT(): void{
-    console.log("Called");
     if(this.value){
       this.calculatorService.getVAT(this.value)
         .subscribe(price => this.price = price);
