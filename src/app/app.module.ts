@@ -11,6 +11,11 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatCardModule} from "@angular/material/card";
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorComponent } from './error/error.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import { VatCalculatorComponent } from './vat-calculator/vat-calculator.component';
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,16 +23,21 @@ import { ErrorComponent } from './error/error.component';
     ProductComponent,
     ProductDetailsComponent,
     ToolbarComponent,
-    ErrorComponent
+    ErrorComponent,
+    VatCalculatorComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatCardModule,
-        HttpClientModule,
-        AppRoutingModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
